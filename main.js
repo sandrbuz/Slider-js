@@ -6,9 +6,16 @@ var slider1 = {
     slideImage: document.getElementById('slide-img'),
 
     start: function () {
+        var that = this;
         // subscribe to events
-        this.showPrevBtn.addEventListener('click', this.onShowPrevBtnClick);
-        this.showNextBtn.addEventListener('click', this.onShowNextBtnClick);
+        this.showPrevBtn.addEventListener('click', function (e) {
+            that.onShowPrevBtnClick(e);
+        });
+
+        this.showNextBtn.addEventListener('click', function (e) {
+            that.onShowNextBtnClick();
+        });
+
 
         // create images Array
         this.imagesUrls.push('https://vybratpravilno.ru/wp-content/uploads/2016/04/2.Ferrari-599XX-1024x768.jpg');
@@ -31,7 +38,7 @@ var slider1 = {
 
         // disable prev button if need
         if (this.currentImageIndex === 0) {
-            showPrevBtn.disabled = true;
+            this.showPrevBtn.disabled = true;
         }
     },
 
