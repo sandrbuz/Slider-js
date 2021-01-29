@@ -1,12 +1,22 @@
-var slider1 = {
+var slider2 = {
     imagesUrls: [],
     currentImageIndex: 0,
-    showPrevBtn: document.getElementById('show-prev-btn'),
-    showNextBtn: document.getElementById('show-next-btn'),
-    slideImage: document.getElementById('slide-img'),
+
+    showPrevBtn: null,
+    showNextBtn: null,
+    slideImage: null,
 
     start: function () {
         var that = this;
+
+        var el = document.querySelector('#itk-slider2');
+
+        this.showPrevBtn = el.querySelector('.show-prev-btn');
+        this.showNextBtn = el.querySelector('.show-next-btn');
+        this.slideImage = el.querySelector('.slide-img');
+
+
+
         // subscribe to events
         this.showPrevBtn.addEventListener('click', function (e) {
             that.onShowPrevBtnClick(e);
