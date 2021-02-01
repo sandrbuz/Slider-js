@@ -1,1 +1,0 @@
-var slider1 = getNewSlider();
